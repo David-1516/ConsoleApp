@@ -27,12 +27,12 @@ namespace ConsoleAppEx
 
         public void Study()
         {
-            Console.WriteLine($"{Name} is studying.");
+            Console.WriteLine($"{Name} je upisao.");
         }
 
         public void Study(string subject)
         {
-            Console.WriteLine($"{Name} is studying {subject}.");
+            Console.WriteLine($"{Name} je upisao {subject}.");
         }
     }
 }

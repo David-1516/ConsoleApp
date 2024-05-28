@@ -32,13 +32,13 @@ namespace ConsoleAppEx
             Console.Write("Broj indeksa: ");
             string studentID = Console.ReadLine();
 
-            Console.Write("Smer: ");
+            Console.Write("Upisani smjer studija: ");
             string studentMajor = Console.ReadLine();
 
             Student student = new Student(studentName, studentSurname, studentAge, studentGender, studentID, studentMajor);
             student.DisplayInfo();
             student.Study();
-            student.Study("Math");
+            student.Study("Matematiku");
 
             Console.WriteLine();
 
@@ -70,7 +70,7 @@ namespace ConsoleAppEx
             Employee employee = new Employee(employeeName, employeeSurname, employeeAge, employeeGender, employeeID, employeePosition);
             employee.DisplayInfo();
             employee.Work();
-            employee.Work("research paper");
+            employee.Work("Predaje i radi u Monu");
 
             Console.ReadKey();
         }

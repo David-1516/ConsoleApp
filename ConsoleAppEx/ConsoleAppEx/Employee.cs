@@ -28,12 +28,12 @@ namespace ConsoleAppEx
         // Overloaded method
         public void Work()
         {
-            Console.WriteLine($"{Name} is working.");
+            Console.WriteLine($"{Name} radi.");
         }
 
         public void Work(string task)
         {
-            Console.WriteLine($"{Name} is working on {task}.");
+            Console.WriteLine($"{Name} radi na {task}.");
         }
 
     }
