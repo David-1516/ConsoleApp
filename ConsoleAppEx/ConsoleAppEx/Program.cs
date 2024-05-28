@@ -17,7 +17,7 @@ namespace ConsoleAppEx
 
             Console.WriteLine();
 
-            // Unos podataka za zaposlenog
+
             Employee employee = CreateEmployee();
             Utility.DisplayPersonInfo(employee);
             employee.Work();
