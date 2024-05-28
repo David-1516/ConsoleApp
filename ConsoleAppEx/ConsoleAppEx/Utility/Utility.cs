@@ -8,9 +8,18 @@ namespace ConsoleAppEx
 {
     class Utility
     {
+        private static List<Person> peopleList = new List<Person>();
         public static void DisplayPersonInfo<T>(T person) where T : Person
         {
             person.DisplayInfo();
+        }
+        public static void DisplayPeopleList()
+        {
+            Console.WriteLine("Lista osoba:");
+            foreach (var person in peopleList)
+            {
+                DisplayPersonInfo(person);
+            }
         }
         public static Student CreateStudent()
         {
@@ -38,6 +47,39 @@ namespace ConsoleAppEx
             string employeePosition = Prompt("Pozicija");
 
             return new Employee(employeeName, employeeSurname, employeeAge, employeeGender, employeeID, employeePosition);
+        }
+        public static void AddPerson(Person person)
+        {
+            peopleList.Add(person);
+            Console.WriteLine("Osoba uspješno dodana.");
+        }
+
+        public static void UpdatePerson(string name, Person updatedPerson)
+        {
+            int index = peopleList.FindIndex(p => p.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            if (index != -1)
+            {
+                peopleList[index] = updatedPerson;
+                Console.WriteLine("Osoba uspješno ažurirana.");
+            }
+            else
+            {
+                Console.WriteLine("Osoba nije pronađena.");
+            }
+        }
+
+        public static void DeletePerson(string name)
+        {
+            int index = peopleList.FindIndex(p => p.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            if (index != -1)
+            {
+                peopleList.RemoveAt(index);
+                Console.WriteLine("Osoba uspješno obrisana.");
+            }
+            else
+            {
+                Console.WriteLine("Osoba nije pronađena.");
+            }
         }
 
         private static string Prompt(string message)

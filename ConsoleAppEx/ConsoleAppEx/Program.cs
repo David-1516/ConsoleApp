@@ -16,6 +16,7 @@ namespace ConsoleAppEx
                 Console.WriteLine("Odaberite opciju:");
                 Console.WriteLine("1 - Unesite podatke za studenta");
                 Console.WriteLine("2 - Unesite podatke za zaposlenog");
+                Console.WriteLine("3 - Pregledaj listu osoba");
                 Console.WriteLine("0 - Izlaz");
                 Console.Write("Vaš odabir: ");
 
@@ -24,15 +25,14 @@ namespace ConsoleAppEx
                 {
                     case "1":
                         Student student = Utility.CreateStudent();
-                        Utility.DisplayPersonInfo(student);
-                        student.Study();
-                        student.Study("Matematiku");
+                        Utility.AddPerson(student);
                         break;
                     case "2":
                         Employee employee = Utility.CreateEmployee();
-                        Utility.DisplayPersonInfo(employee);
-                        employee.Work();
-                        employee.Work("predavanje i istraživanje");
+                        Utility.AddPerson(employee);
+                        break;
+                    case "3":
+                        Utility.DisplayPeopleList();
                         break;
                     case "0":
                         exit = true;
