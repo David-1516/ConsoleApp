@@ -23,13 +23,13 @@ namespace ConsoleAppEx
                 switch (choice)
                 {
                     case "1":
-                        Student student = Functions.CreateStudent();
+                        Student student = Utility.CreateStudent();
                         Utility.DisplayPersonInfo(student);
                         student.Study();
                         student.Study("Matematiku");
                         break;
                     case "2":
-                        Employee employee = Functions.CreateEmployee();
+                        Employee employee = Utility.CreateEmployee();
                         Utility.DisplayPersonInfo(employee);
                         employee.Work();
                         employee.Work("predavanje i istraživanje");
