@@ -20,17 +20,17 @@ namespace ConsoleAppEx
 
         public override void DisplayInfo()
         {
-            Console.WriteLine($"Name: {Name}, Surname: {Surname}, Age: {Age}, Gender: {Gender}, Student ID: {StudentID}, Major: {Major}");
+            Console.WriteLine($"Ime: {Name}, Prezime: {Surname}, Dob: {Age}, Spol: {Gender}, Student ID: {StudentID}, Smijer studija: {Major}");
         }
 
         public void Study()
         {
-            Console.WriteLine($"{Name} is studying.");
+            Console.WriteLine($"{Name} studira.");
         }
 
         public void Study(string subject)
         {
-            Console.WriteLine($"{Name} is studying {subject}.");
+            Console.WriteLine($"{Name} studira na {subject}.");
         }
     }
 }

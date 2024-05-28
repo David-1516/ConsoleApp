@@ -20,17 +20,17 @@ namespace ConsoleAppEx
 
         public override void DisplayInfo()
         {
-            Console.WriteLine($"Name: {Name}, Surname: {Surname}, Age: {Age}, Gender: {Gender}, Employee ID: {EmployeeID}, Position: {Position}");
+            Console.WriteLine($"Ime: {Name}, Prezime: {Surname}, Ime: {Age}, Spol: {Gender}, Zaposlenik ID: {EmployeeID}, Pozicija: {Position}");
         }
 
         public void Work()
         {
-            Console.WriteLine($"{Name} is working.");
+            Console.WriteLine($"{Name} radi na.");
         }
 
         public void Work(string task)
         {
-            Console.WriteLine($"{Name} is working on {task}.");
+            Console.WriteLine($"{Name} radi na {task}.");
         }
     }
 }
