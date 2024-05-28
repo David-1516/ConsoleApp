@@ -10,66 +10,41 @@ namespace ConsoleAppEx
     {
         static void Main(string[] args)
         {
-            Student student = CreateStudent();
-            Utility.DisplayPersonInfo(student);
-            student.Study();
-            student.Study("Matematiku");
-
-            Console.WriteLine();
-
-
-            Employee employee = CreateEmployee();
-            Utility.DisplayPersonInfo(employee);
-            employee.Work();
-            employee.Work("predavanje i istraživanje");
-
-            Console.ReadKey();
-
-        }
-        private static Student CreateStudent()
-        {
-            Console.WriteLine("Unesite podatke za studenta:");
-
-            string studentName = Prompt("Ime");
-            string studentSurname = Prompt("Prezime");
-            int studentAge = PromptInt("Godine");
-            string studentGender = Prompt("Pol (Muško/Žensko)");
-            string studentID = Prompt("Broj indeksa");
-            string studentMajor = Prompt("Upisani smjer studija");
-
-            return new Student(studentName, studentSurname, studentAge, studentGender, studentID, studentMajor);
-        }
-
-        private static Employee CreateEmployee()
-        {
-            Console.WriteLine("Unesite podatke za zaposlenog:");
-
-            string employeeName = Prompt("Ime");
-            string employeeSurname = Prompt("Prezime");
-            int employeeAge = PromptInt("Godine");
-            string employeeGender = Prompt("Pol (Muško/Žensko)");
-            string employeeID = Prompt("Broj zaposlenog");
-            string employeePosition = Prompt("Pozicija");
-
-            return new Employee(employeeName, employeeSurname, employeeAge, employeeGender, employeeID, employeePosition);
-        }
-
-        private static string Prompt(string message)
-        {
-            Console.Write($"{message}: ");
-            return Console.ReadLine();
-        }
-
-        private static int PromptInt(string message)
-        {
-            int value;
-            Console.Write($"{message}: ");
-            while (!int.TryParse(Console.ReadLine(), out value) || value <= 0)
+            bool exit = false;
+            while (!exit)
             {
-                Console.WriteLine("Molimo unesite važeći broj.");
-                Console.Write($"{message}: ");
+                Console.WriteLine("Odaberite opciju:");
+                Console.WriteLine("1 - Unesite podatke za studenta");
+                Console.WriteLine("2 - Unesite podatke za zaposlenog");
+                Console.WriteLine("0 - Izlaz");
+                Console.Write("Vaš odabir: ");
+
+                string choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        Student student = Functions.CreateStudent();
+                        Utility.DisplayPersonInfo(student);
+                        student.Study();
+                        student.Study("Matematiku");
+                        break;
+                    case "2":
+                        Employee employee = Functions.CreateEmployee();
+                        Utility.DisplayPersonInfo(employee);
+                        employee.Work();
+                        employee.Work("predavanje i istraživanje");
+                        break;
+                    case "0":
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Nevažeća opcija. Molimo pokušajte ponovno.");
+                        break;
+                }
+                Console.WriteLine();
+
             }
-            return value;
+
         }
     }
 }
