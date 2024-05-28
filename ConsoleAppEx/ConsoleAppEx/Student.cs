@@ -6,33 +6,31 @@ using System.Threading.Tasks;
 
 namespace ConsoleAppEx
 {
-    class Student:Person
+    public class Employee : Person, IWorkable
     {
-        public string StudentID { get; set; }
-        public string Major { get; set; }
+        public string EmployeeID { get; set; }
+        public string Position { get; set; }
 
-        public Student(string name, string surname, int age, string gender, string studentID, string major)
+        public Employee(string name, string surname, int age, string gender, string employeeID, string position)
             : base(name, surname, age, gender)
         {
-            StudentID = studentID;
-            Major = major;
+            EmployeeID = employeeID;
+            Position = position;
         }
-
 
         public override void DisplayInfo()
         {
-            base.DisplayInfo();
-            Console.WriteLine($"Student ID: {StudentID}, Major: {Major}");
+            Console.WriteLine($"Name: {Name}, Surname: {Surname}, Age: {Age}, Gender: {Gender}, Employee ID: {EmployeeID}, Position: {Position}");
         }
 
-        public void Study()
+        public void Work()
         {
-            Console.WriteLine($"{Name} je upisao.");
+            Console.WriteLine($"{Name} is working.");
         }
 
-        public void Study(string subject)
+        public void Work(string task)
         {
-            Console.WriteLine($"{Name} je upisao {subject}.");
+            Console.WriteLine($"{Name} is working on {task}.");
         }
     }
 }

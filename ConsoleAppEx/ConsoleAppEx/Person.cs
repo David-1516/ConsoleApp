@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleAppEx
 {
-    class Person
+    public abstract class Person : IDisplayable
     {
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -21,9 +21,6 @@ namespace ConsoleAppEx
             Gender = gender;
         }
 
-        public virtual void DisplayInfo()
-        {
-            Console.WriteLine($"Name: {Name}, Surname: {Surname}, Age: {Age}, Gender: {Gender}");
-        }
+        public abstract void DisplayInfo();
     }
 }

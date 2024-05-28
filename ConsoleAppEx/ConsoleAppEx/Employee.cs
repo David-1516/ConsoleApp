@@ -6,35 +6,31 @@ using System.Threading.Tasks;
 
 namespace ConsoleAppEx
 {
-    class Employee : Person
+    public class Student : Person, IStudiable
     {
-        public string EmployeeID { get; set; }
-        public string Position { get; set; }
+        public string StudentID { get; set; }
+        public string Major { get; set; }
 
-        public Employee(string name, string surname, int age, string gender, string employeeID, string position)
+        public Student(string name, string surname, int age, string gender, string studentID, string major)
             : base(name, surname, age, gender)
         {
-            EmployeeID = employeeID;
-            Position = position;
+            StudentID = studentID;
+            Major = major;
         }
 
-        // Overriding the DisplayInfo method
         public override void DisplayInfo()
         {
-            base.DisplayInfo();
-            Console.WriteLine($"Employee ID: {EmployeeID}, Position: {Position}");
+            Console.WriteLine($"Name: {Name}, Surname: {Surname}, Age: {Age}, Gender: {Gender}, Student ID: {StudentID}, Major: {Major}");
         }
 
-        // Overloaded method
-        public void Work()
+        public void Study()
         {
-            Console.WriteLine($"{Name} radi.");
+            Console.WriteLine($"{Name} is studying.");
         }
 
-        public void Work(string task)
+        public void Study(string subject)
         {
-            Console.WriteLine($"{Name} radi na {task}.");
+            Console.WriteLine($"{Name} is studying {subject}.");
         }
-
     }
 }
